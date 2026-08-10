@@ -1,0 +1,5 @@
+TANKS V4.6.7
+
+- Replaced icon.png with the newly supplied icon image.
+- Home screen now renders the current GAME_VERSION in the bottom-right corner.
+- Updated GAME_VERSION to 4.6.7.

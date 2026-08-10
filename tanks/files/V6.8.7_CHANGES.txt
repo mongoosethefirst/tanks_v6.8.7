@@ -1,0 +1,15 @@
+TANKS V6.8.7
+
+- Added scrap shop opened with the green dollar icon or B.
+- Added a 10-slot hotbar; use slots with 1-9 and 0.
+- Shop purchases require an open hotbar slot and enough personal scrap.
+- Ammo Pack: 5 scrap, +10 ammo when used.
+- Repair: 8 scrap, +30 health when used; does not waste itself at full health.
+- Shield: 10 scrap, 50% damage reduction for 10 seconds.
+- Rapid Fire: 30 scrap, 3x firing rate for 10 seconds.
+- Explosive Rounds: 20 scrap, +10 ammo and the next 10 shots deal splash damage.
+- Engine Upgrade: 10 scrap, 1.5x speed for 10 seconds; multiple active upgrades stack.
+- Replaced gameplay scrap art with the new scrap image.
+- Added shop, repair, shield, rapid-fire, explosive-round and engine-upgrade icons.
+- Purchase feedback is drawn in code with polygon/color effects; no purchase-flash asset is needed.
+- Updated game version to 6.8.7.

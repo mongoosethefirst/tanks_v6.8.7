@@ -1,0 +1,7 @@
+TANKS V5.7.7
+
+- Added FREE-FOR-ALL toggle to host game settings.
+- Free-for-all has no teams; every other player can be damaged.
+- FFA players spawn on a random one of the four map sides with safe-spawn checks.
+- Lobby, TAB player list, scoreboard, HUD, and match-end screen adapt to FFA mode.
+- Team mode is unchanged: Team 1 spawns at the top, Team 2 at the bottom.

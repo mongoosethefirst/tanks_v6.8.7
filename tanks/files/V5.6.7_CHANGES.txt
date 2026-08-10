@@ -1,0 +1,23 @@
+TANKS V5.6.7
+
+- Added a pre-game lobby showing connected players, teams, host, and player count.
+- Host controls match start; all players see a 3-2-1 countdown.
+- New joins are blocked after the countdown begins.
+- Added clean disconnect handling and disconnect chat messages.
+- Joining clients return to the home screen after losing the host connection.
+- Hold TAB to see player/team/ping information.
+- Hold ` or ~ to see the scoreboard with kills and deaths.
+- Deaths now auto-respawn after the host-selected respawn time.
+- Added 1.5 seconds of spawn protection after respawning.
+- Team 1 spawns along the top edge with randomized X positions.
+- Team 2 spawns along the bottom edge with randomized X positions.
+- Spawn selection avoids nearby living players.
+- Added host settings for starting ammo, max health, respawn time, and friendly fire.
+- Existing scrap/ammo/health spawn multipliers remain 0.1x-5.0x.
+- Ammo keeps the extra +0.5x player scaling from V4.6.7.
+- Scrap, ammo, and health keep independent spawn timers.
+- Added map-area-scaled caps for scrap, ammo, and health objects.
+- Map size still scales automatically by about +25% area for every additional 2 max-player slots.
+- Added an always-visible FPS counter and close button.
+- Confirmed there is no pressing dependency.
+- Version updated to V5.6.7.

@@ -1,0 +1,8 @@
+TANKS V4.6.6
+
+- Added separate scrap, ammo, and health spawn-rate sliders from 0.1x to 5.0x when creating a game.
+- Added max-player slider: 2, 4, 6, 8, 10, 12, 14, or 16.
+- Ammo now uses the normal player spawn multiplier plus an additional 0.5x.
+- Map size scales with the selected max players. Each additional two player slots adds about 25% of the original map area.
+- Player collision remains enabled.
+- Asset lookup now supports both source and PyInstaller onedir layouts.
