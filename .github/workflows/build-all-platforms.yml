@@ -1,0 +1,82 @@
+name: Build TANKS V6.8.7
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: TANKS_V6.8.7_Windows
+          - os: macos-latest
+            artifact: TANKS_V6.8.7_macOS
+          - os: ubuntu-latest
+            artifact: TANKS_V6.8.7_Linux
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pygame-ce pyinstaller
+
+      - name: Build TANKS
+        run: >
+          python -m PyInstaller
+          --noconfirm
+          --clean
+          --windowed
+          --onedir
+          --name TANKS_V6.8.7
+          --paths "tanks/files"
+          --add-data "tanks/images:tanks/images"
+          --add-data "tanks/fonts:tanks/fonts"
+          --hidden-import new
+          --hidden-import join
+          --hidden-import play_host
+          --hidden-import play_client
+          --hidden-import server
+          --hidden-import network
+          --hidden-import game_client_base
+          "tanks/files/home_page.py"
+
+      - name: Upload Windows build
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: TANKS_V6.8.7_Windows
+          path: dist/TANKS_V6.8.7/
+          if-no-files-found: error
+
+      - name: Upload Linux build
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v4
+        with:
+          name: TANKS_V6.8.7_Linux
+          path: dist/TANKS_V6.8.7/
+          if-no-files-found: error
+
+      - name: Upload macOS build
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v4
+        with:
+          name: TANKS_V6.8.7_macOS
+          path: |
+            dist/TANKS_V6.8.7/
+            dist/TANKS_V6.8.7.app
+          if-no-files-found: error
